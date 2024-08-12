@@ -1,0 +1,31 @@
+---
+import Meta from "@components/Meta.astro";
+import FooterSection from "@components/sections/FooterSection.astro";
+import { SITE } from "@data/constants";
+
+// Setting expected props
+const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
+
+interface Props {
+  title?: string;
+  meta?: string;
+  structuredData?: object;
+  lang?: string;
+}
+---
+
+<html lang={lang} class="lenis lenis-smooth">
+  <head>
+     <Meta meta={meta} structuredData={structuredData} />
+     <title>{title}</title>
+     <script>
+      import "@scripts/lenisSmoothScroll.js";
+    </script>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <FooterSection />
+  </body>
+</html>
