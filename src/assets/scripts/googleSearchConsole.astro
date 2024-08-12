@@ -1,0 +1,10 @@
+---
+// Google Search Console meta tag
+import { googleSiteVerification } from "@data/analytics";
+---
+
+{
+	googleSiteVerification && (
+		<meta name="google-site-verification" content={googleSiteVerification} />
+	)
+}

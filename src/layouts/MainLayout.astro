@@ -1,7 +1,11 @@
 ---
 import Meta from "@components/Meta.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
-import { SITE } from "@data/constants";
+import GoogleTagManagerBody from "@scripts/googleTagManagerBody.astro";
+import { SITE } from "@/data/config";
+
+// Styles
+import "@styles/global.css";
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
@@ -23,6 +27,7 @@ interface Props {
     </script>
   </head>
   <body>
+    <GoogleTagManagerBody />
     <main>
       <slot />
     </main>
