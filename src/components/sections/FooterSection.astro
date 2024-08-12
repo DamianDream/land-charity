@@ -1,10 +1,7 @@
 ---
-const str = "Footer for Astro";
-
 const { text } = Astro.props;
 ---
 
 <footer>
-  <h2>{str}</h2>
-  <p>{text ? text : "Default lorem text for footer"}</p>
+  <h3>{text ? text : "Default footer text"}</h3>
 </footer>
